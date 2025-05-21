@@ -6,7 +6,7 @@ from matplotlib.ticker import PercentFormatter
 plt.style.use('ggplot')
 sns.set_palette("Set2")
 
-# Create dataframes with financial data for both companies
+# Dataframes with financial data for both companies
 # Financial data for NAPESCO
 napesco_data = {
     'Year': [2022, 2023],
@@ -236,7 +236,7 @@ def create_financial_dashboard(napesco_ratios, ipg_ratios, filename=None):
         plt.savefig(filename)
         print(f"Saved: {filename}")
 
-    plt.close()  # Close the figure to free up memory
+    plt.close()  
 
 # 3. Create and save a radar chart for multidimensional financial comparison
 
@@ -253,8 +253,8 @@ def create_radar_chart(napesco_ratios, ipg_ratios, filename=None):
                   'Solvency\n(Equity Multiplier)',
                   'Working Capital\nManagement\n(Cash Conversion Cycle)']
 
-    # For demonstration, we'll use normalized values to make the chart readable
-    # In practice, we'd need to normalize these properly based on industry benchmarks
+    # we'll use normalized values to make the chart readable
+    #  industry benchmarks
     napesco_values = [
         napesco_2023['Net_Profit_Margin'],  # Profitability
         min(napesco_2023['Current_Ratio']/5, 1),  # Liquidity (capped at 1)
@@ -296,7 +296,7 @@ def create_radar_chart(napesco_ratios, ipg_ratios, filename=None):
         plt.savefig(filename)
         print(f"Saved: {filename}")
 
-    plt.close()  # Close the figure to free up memory
+    plt.close() 
 
 # 4. Create and save correlation heatmap for ratio relationships
 
@@ -310,7 +310,7 @@ def create_correlation_heatmap(ratios_df, company_name, filename=None):
     company_data = ratios_df[ratios_df['Company']
                              == company_name][correlation_columns]
 
-    # Create correlation matrix
+    # Correlation matrix
     corr_matrix = company_data.corr()
 
     # Create heatmap
@@ -324,9 +324,9 @@ def create_correlation_heatmap(ratios_df, company_name, filename=None):
         plt.savefig(filename)
         print(f"Saved: {filename}")
 
-    plt.close()  # Close the figure to free up memory
+    plt.close() 
 
-# 5. Create and save the financial efficiency matrix
+# 5. Financial efficiency matrix
 
 
 def create_efficiency_matrix(napesco_ratios, ipg_ratios, filename=None):

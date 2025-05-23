@@ -7,7 +7,7 @@ from matplotlib.ticker import PercentFormatter
 plt.style.use('ggplot')
 sns.set_palette("Set2")
 
-# Create dashboards directory if it doesn't exist
+
 if not os.path.exists('dashboards'):
     os.makedirs('dashboards')
     print("Created 'dashboards' directory")
@@ -26,7 +26,7 @@ napesco_data = {
     'Accounts_Receivable': [13366220, 12655113],
     'Cash_Equivalents': [2180992, 2660961],
     'Total_Assets': [53151614, 70683248],
-    'Current_Liabilities': [7271369, 11883710],
+    'Current_Liabilities': [7271359, 11883710],
     'Total_Liabilities': [10888314, 14717109],
     'Shareholders_Equity': [42263300, 55966139],
     'Operating_Cash_Flow': [10956411, 12565079],
